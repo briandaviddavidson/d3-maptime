@@ -1,7 +1,7 @@
 <html>
 <head>
-  <title>A D3 map</title>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <title>A D3 map of Washington DC</title>
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
   <script src="neighborhoods.js"></script>
 </head>
 <body>
@@ -16,20 +16,21 @@ var svg = d3.select( "body" )
 
 var g = svg.append( "g" );
 
-var albersProjection = d3.geo.albers()
-  .scale( 190000 )
-  .rotate( [71.057,0] )
-  .center( [0, 42.313] )
+var albersProjection = d3.geoAlbers()
+  .scale( 150000 )
+  .rotate( [77.0369,0] )
+  .center( [0, 38.9072] )
   .translate( [width/2,height/2] );
 
-var geoPath = d3.geo.path()
+var geoPath = d3.geoPath()
     .projection( albersProjection );
 
 g.selectAll( "path" )
-  .data( neighborhoods_json.features )
+  .data( neighborhoodsJson.features )
   .enter()
   .append( "path" )
   .attr( "fill", "#ccc" )
+  .attr( "stroke", "#000" )
   .attr( "d", geoPath );
 
   </script>
