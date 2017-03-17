@@ -22,6 +22,7 @@ var mapFeatures, chapterFeatures;;
 d3.json( "countries.json", function( json )
 {
 	d3.json( "chapters.json", function( chapters ){
+		console.log(chapters)
 		chapterFeatures = chapters.features;
 		mapFeatures = topojson.feature(json,json.objects.countries).features;
 		buildGlobe();
@@ -206,10 +207,10 @@ function move_globe( coords, animate, end )
 					d3.selectAll( "#map .layer path" ).attr("d", function(d) { return path(d) || "M0 0"; });
 					chapters.selectAll("image")
 						.attr( "x", function(d){
-							return mapProjection( d.geometry.coordinates )[0];
+							return mapProjection( d.geometry.coordinates )[0] - 30;
 						})
 						.attr( "y", function(d){
-							return mapProjection( d.geometry.coordinates )[1];
+							return mapProjection( d.geometry.coordinates )[1] - 25;
 						})
 				};
 			})
@@ -221,10 +222,10 @@ function move_globe( coords, animate, end )
 		d3.selectAll( "#map .layer path" ).attr("d", function(d) { return path(d) || "M0 0"; });
 		chapters.selectAll("image")
 			.attr( "x", function(d){
-				return mapProjection( d.geometry.coordinates )[0];
+				return mapProjection( d.geometry.coordinates )[0] - 30;
 			})
 			.attr( "y", function(d){
-				return mapProjection( d.geometry.coordinates )[1];
+				return mapProjection( d.geometry.coordinates )[1] - 25;
 			})
 			.style("display",function(d){
 				return path(d) ? "block" : "none";
