@@ -51,9 +51,9 @@
 
 				<section>
 					<p>Follow along!</p>
-					<p><a href="http://briandaviddavidson.com/maptime-d3" target="_blank">briandaviddavidson.com/maptime-d3</a></p>
+					<p><a href="http://briandaviddavidson.com/d3-maptime" target="_blank">briandaviddavidson.com/d3-maptime</a></p>
 					<p>Or get the code for examples:</p>
-					<p><a href="http://github.com/briandaviddavidson/maptime-d3" target="_blank">github.com/briandaviddavidson/maptime-d3</a></p>
+					<p><a href="http://github.com/briandaviddavidson/d3-maptime" target="_blank">github.com/briandaviddavidson/d3-maptime</a></p>
 				</section>
 
 				<section>
@@ -444,7 +444,7 @@ svg.selectAll( "rect" )
   .enter()
   .append( "rect" )
     .attr( "x", function(d,i){
-      return i*25;
+      return i*50;
     })
     .attr( "width", 15 )
     .attr( "fill", "#d1c9b8" )
@@ -533,7 +533,7 @@ svg.selectAll( "rect" )
   .enter()
   .append( "rect" )
     .attr( "x", function(d,i){
-      return i*20;
+      return i*50;
     })
 					</code></pre>
 					<p>We space the bars our horizontally using that second <code>i</code> argument, the index of each bar in the selection. For our four rectangles, <code>i</code> here will be 0, 1, 2, and 3, giving us x positions of 0, 50, 100, and 150.</p>

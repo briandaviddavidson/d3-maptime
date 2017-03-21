@@ -136,7 +136,7 @@ function buildGlobe()
 		.data( chapterFeatures )
 		.enter()
 		.append( "svg:image" )
-		.attr("xlink:href","rainbowrat.png")
+		.attr("xlink:href","maptime.gif")
 		.attr( "x", function(d){
 			return mapProjection( d.geometry.coordinates )[0] - 30;
 		})
