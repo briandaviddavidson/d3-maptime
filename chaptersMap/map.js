@@ -180,7 +180,7 @@ function startRotation(){
 		rotateX += .5;
 		if ( rotateX >= 180 ) rotateX -= 360;
 		var y = mapProjection.rotate()[1];
-		move_globe( [rotateX,rotateX*2] );
+		move_globe( [rotateX,rotateX] );
 		map.select( "#title-path" ).attr( "transform", "rotate(" + rotateX + ",500,333.33333)" );
 		map.select( "#title-text" ).attr( "fill", colorScale(rotateX) );
 		countries.selectAll("path")
